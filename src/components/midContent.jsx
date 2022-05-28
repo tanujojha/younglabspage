@@ -4,49 +4,9 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import $ from "jquery"
 
 function MidContent(){
-  let detisClicked = false;
-  function detailClickHandel(){
-    if (!detisClicked){
-      document.getElementById("detailcontent").style.display = "none";
-      detisClicked = true;
-      // console.log(isClicked)
-    }else if (detisClicked === true) {
-      document.getElementById("detailcontent").style.display = "block";
-      detisClicked = false;
-      // console.log(isClicked)
-    }
-  }
-
-  let hwisClicked = false;
-
-  function hwClickHandel(){
-    if (!hwisClicked){
-      document.getElementById("hwcontent").style.display = "none";
-      hwisClicked = true;
-      // console.log(isClicked)
-    }else if (hwisClicked === true) {
-      document.getElementById("hwcontent").style.display = "block";
-      hwisClicked = false;
-      // console.log(isClicked)
-    }
-  }
-
-  let lgisClicked = false;
-
-  function lgClickHandel(){
-    if (!lgisClicked){
-      document.getElementById("lgcontent").style.display = "none";
-      lgisClicked = true;
-      // console.log(isClicked)
-    }else if (lgisClicked === true) {
-      document.getElementById("lgcontent").style.display = "block";
-      lgisClicked = false;
-      // console.log(isClicked)
-    }
-  }
-
 
   return (
     <>
@@ -124,7 +84,7 @@ function MidContent(){
             <p className = "md:pl-4">
             The course aims at enhancing mathematical skills and brain development. It improves one's number sense and helps them gain the ability to understand relationships between quantities, while stimulating their brain and improving observation skills.
             </p>
-            <p className = "md:p-4 pt-4 font-semibold text-sky-700 text-xl"> Details <ExpandCircleDownIcon onClick = {detailClickHandel} id = "arwdetail"/></p>
+            <p className = "md:p-4 pt-4 font-semibold text-sky-700 text-xl"> Details <ExpandCircleDownIcon style = {{cursor: "pointer"}} onClick = {()=>{$("#detailcontent").toggle()}} id = "arwdetail"/></p>
             <div id = "detailcontent" className = "pb-4 md:pl-4" >
               <p>CLASS 1- Criss-cross multiplication</p>
               <p>CLASS 2- Subtraction with numbers near to 10 and multiples of 10 Cutoff method addition/ Vyavakalanam method Dot method addition/ Rekhanth method</p>
@@ -141,14 +101,14 @@ function MidContent(){
         </div>
 
         <div className = "pb-4 rounded-lg border-2 flex px-4 flex-col">
-          <p className = "md:p-4 pt-4 font-bold text-sky-700 text-2xl"> Homework <ExpandCircleDownIcon onClick = {hwClickHandel} /> </p>
+          <p className = "md:p-4 pt-4 font-bold text-sky-700 text-2xl"> Homework <ExpandCircleDownIcon style = {{cursor: "pointer"}} onClick = {()=>{$("#hwcontent").toggle()}} /> </p>
           <div id = "hwcontent">
             <p className = "md:pl-4">Comprehensive home assignments will be provided , which will be an extension of what is done is the class.</p>
           </div>
         </div>
 
         <div className = "mt-6 pb-4 rounded-lg flex border-2 mt-4 px-4 flex-col">
-          <p className = "md:p-4 pt-4 font-semibold text-sky-700 text-2xl"> Learning Goals <ExpandCircleDownIcon onClick = {lgClickHandel} /> </p>
+          <p className = "md:p-4 pt-4 font-semibold text-sky-700 text-2xl"> Learning Goals <ExpandCircleDownIcon style = {{cursor: "pointer"}} onClick = {()=>{$("#lgcontent").toggle()}} /> </p>
           <div id = "lgcontent">
             <p className = "md:pl-4">Have Fun with Math! Get rid of your Math phobia. Become a Human Calculator yourself and be able to calculate 10-15 times faster than before!</p>
           </div>
